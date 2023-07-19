@@ -1,10 +1,10 @@
 # Azure Fundamentals AZ-900
 
-## Describe Cloud Concepts
+## Learning Path 1: Describe Cloud Concepts
 
 The certification validates your basic knowledge of cloud services and how those services are provided with Azure.
 
-### Describe Cloud Computing
+### Module 1: Describe Cloud Computing
 
 This module introduces you to cloud computing. It covers things such as cloud concepts, deployment models, and understanding shared responsibility in the cloud.
 
@@ -77,7 +77,7 @@ In a ***multi-cloud*** scenario, you use ***multiple*** public cloud providers. 
 
 Instead of maintaining CPUs and storage in your datacenter, you rent them for the time that you need them.
 
-### Describe The Benefits Of Using Cloud Services
+### Module 2: Describe The Benefits Of Using Cloud Services
 
 This module introduces you to the benefits ***cloud computing*** can offer you or your organization.
 
@@ -157,7 +157,7 @@ A major benefit of ***cloud computing*** is the ***manageability*** options.
 - Using ***APIs***.
 - Using ***PowerShell***.
 
-### Describe Cloud Service Type
+### Module 3: Describe Cloud Service Type
 
 This module covers the different ***cloud service types*** and shares some of the use cases and benefits aligned with each service type.
 
@@ -204,11 +204,11 @@ The cloud provider is responsible for ***physical security of the datacenters, p
 - ***Business productivity applications***.
 - ***Finance*** and ***expense*** tracking.
 
-## Describe Azure Architecture And Services
+## Learning Path 2: Describe Azure Architecture And Services
 
 This learning path explores Microsoft Azure, its architecture, and some of the most commonly used services and resources.
 
-### Describe The Core Architectural Components Of Azure
+### Module 1: Describe The Core Architectural Components Of Azure
 
 You'll learn about the ***physical infrastructure***, how resources are managed, and have a chance to create an ***Azure resource***.
 
@@ -316,14 +316,14 @@ Important facts about management groups:
 2. A ***management group tree*** can support up to ***six*** levels of ***depth***.
 3. Each ***management group*** and ***subscription*** can support only ***one parent***.
 
-### Describe Azure Compute And Networking Services
+### Module 2: Describe Azure Compute And Networking Services
 
 This module focuses on some of the computer services and networking services available within Azure.
 
-### Describe Azure Storage Services
+### Module 3: Describe Azure Storage Services
 
 This module introduces you to storage in Azure, including things such as different types of storage and how a distributed infrastructure can make your data more resilient.
 
-### Describe Azure Identity, Access And Security Services
+### Module 4: Describe Azure Identity, Access And Security Services
 
 This module covers some of the authorization and authentication methods available with Azure.
