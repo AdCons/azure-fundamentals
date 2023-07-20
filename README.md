@@ -318,7 +318,231 @@ Important facts about management groups:
 
 ### Module 2: Describe Azure Compute And Networking Services
 
-This module focuses on some of the computer services and networking services available within Azure.
+This module focuses on some of the ***computer*** services and ***networking*** services available within Azure.
+
+#### Describe Azure Virtual Machines
+
+An ***Azure VM*** gives you the ***flexibility of virtualization*** without having to buy and maintain the physical hardware that runs the ***VM***. However, as an ***IaaS offering***, you still need to configure, update, and maintain the software that runs on the ***VM***.
+
+***VMs*** are an ideal choice when you need:
+
+1. ***Total control*** over the operating system (OS).
+2. The ability to run ***custom software***.
+3. To use ***custom hosting*** configurations.
+
+An image is a template used to create a ***VM*** and may already include an OS and other software, like development tools or web hosting environments.
+
+##### Scale VMs In Azure
+
+Azure can also manage the grouping of ***VMs*** for you with features such as ***scale sets and availability sets***.
+
+##### Virtual Machine Scale Sets
+
+Virtual machine ***scale sets*** let you create and manage a group of ***identical, load-balanced VMs***. Scale sets allow you to centrally ***manage, configure, and update*** a large number of VMs in minutes.
+
+***Virtual machine scale sets*** also automatically deploy a ***load balancer*** to make sure that your resources are being used efficiently.
+
+##### Virtual Machine Availability Sets
+
+***Availability sets*** are designed to ensure that ***VMs stagger*** updates and have varied power and network connectivity, ***preventing*** you from losing all your ***VMs*** with a single network or power failure.
+
+1. ***Update domain***: Groups ***VMs*** that can be ***rebooted*** at the same time.
+2. ***Fault domain***: Groups your ***VMs*** by ***common*** power source and network switch.
+
+Best of all, there’s ***no additional cost*** for configuring an ***availability set***. You only pay for the VM instances you create.
+
+##### Examples Of When To Use VMs
+
+Some common examples or use cases for virtual machines include:
+
+1. ***Testing*** and ***development***.
+2. Running ***applications*** in the ***cloud***.
+3. Extending your ***datacenter*** to the ***cloud***.
+4. ***Disaster recovery***.
+
+##### Move To The Cloud With VMs
+
+VMs are also an excellent choice when you ***move*** from a ***physical*** server to the ***cloud*** (also known as ***lift and shift***). You can create an ***image*** of the physical server and ***host it*** within a VM with little or ***no changes***.
+
+##### VM Resources
+
+1. ***Size***: Purpose, number of processor cores, and amount of RAM.
+2. ***Storage disks***: Hard disk drives, solid state drives, etc.
+3. ***Networking***: Virtual network, public IP address, and port configuration.
+
+#### Describe Azure Containers
+
+***Containers*** are a ***virtualization environment***. Unlike ***virtual machines***, you don't manage the ***operating system*** for a container.
+
+##### Azure Container Instances
+
+***Azure Container Instances*** allow you to upload your ***containers*** and then the service will ***run*** the containers for you. ***Azure Container Instances*** are a ***platform as a service (PaaS)*** offering.
+
+##### Use Containers In Your Solutions
+
+***Containers*** are often used to create solutions by using a ***microservice architecture***. This architecture is where you ***break solutions*** into ***smaller, independent*** pieces. This split allows you to separate ***portions of your app*** into ***logical*** sections that can be ***maintained, scaled, or updated independently***.
+
+#### Describe Azure Functions
+
+***Azure Functions*** is an ***event-driven, serverless*** compute option that doesn’t require maintaining virtual machines or containers. With ***Azure Functions***, an ***event wakes*** the function, alleviating the need to keep resources provisioned when there are no events.
+
+##### Benefit Of Azure Functions
+
+Using ***Azure Functions*** is ideal when you are ***not concerned*** about the underlying platform or infrastructure. Functions ***scale automatically*** based on demand.
+
+***Functions*** are commonly used when you need to ***perform work*** in response to an ***event*** (often via a REST request), ***timer***, or ***message*** from another Azure service. ***Azure Functions*** runs your code when it's ***triggered*** and ***automatically deallocates*** resources when the function is finished.
+
+Functions can be either ***stateless*** or ***stateful***:
+
+1. ***Stateless (default)***: They ***behave*** as if they're ***restarted*** every time they respond to an event.
+2. ***Stateful (called Durable Functions)***: A context is ***passed through*** the function to track ***prior activity***.
+
+***Functions*** are a ***key*** component of ***serverless computing***. This ***flexibility*** allows you to manage scaling, run on virtual networks, and even completely isolate the functions.
+
+#### Describe Application Hosting Options
+
+If you need to host your application on Azure, you might initially turn to a virtual machine (VM) or containers.
+
+##### Azure App Service
+
+***App Service*** enables you to build and host ***web apps, background jobs, mobile back-ends, and RESTful APIs*** in the programming language of your choice without managing infrastructure.
+
+***Azure App Service*** lets you focus on ***building*** and ***maintaining*** your app, and Azure focuses on keeping the environment up and running.
+
+##### Types Of Apps Services
+
+With App Service, you can host most common app service styles like:
+
+1. ***Web apps***: Used for hosting websites and web applications.
+2. ***API apps***: Used for hosting RESTful APIs.
+3. ***WebJobs***: Used for running a program or script in the ***same context*** as a web app, API app, or mobile app.
+4. ***Mobile apps***: Used for hosting mobile app back-ends.
+
+***App Service*** handles most of the infrastructure decisions you deal with in hosting web-accessible apps:
+
+1. ***Deployment and management*** are integrated into the platform.
+2. ***Endpoints*** can be secured.
+3. ***Sites*** can be ***scaled*** quickly to handle high traffic loads.
+4. The ***built-in load balancing and traffic manager*** provide high availability.
+
+All of these app styles are hosted in the same infrastructure and share these benefits. This flexibility makes App Service the ideal choice to host web-oriented applications.
+
+#### Describe Azure Virtual Networking
+
+You can think of an ***Azure network*** as an extension of your on-premises network with resources that link other ***Azure resources***.
+
+***Azure virtual networks*** provide the following ***key*** networking capabilities:
+
+1. ***Isolation*** and ***segmentation***: The ***IP*** range only exists within the virtual network and isn't internet routable.
+2. ***Internet communications***: You can ***enable*** incoming connections from the internet.
+3. ***Communicate between Azure resources***: Virtual networks can connect not only ***VMs*** but other ***Azure resources***.
+4. ***Communicate with on-premises resources***:
+    - ***Point-to-site*** virtual private network connections are from a computer outside your organization back into your corporate network.
+    - ***Site-to-site*** virtual private networks link your on-premises VPN device or gateway to the Azure VPN gateway in a virtual network.
+    - ***Azure ExpressRoute*** provides a dedicated private connectivity to Azure that doesn't travel over the internet.
+5. ***Route network traffic***:
+    - ***Route tables*** allow you to define rules about ***how*** traffic should be directed.
+    - ***Border Gateway Protocol (BGP)***: Routing protocol that allows you to exchange routes between your on-premises network and Azure.
+6. ***Filter network traffic***:
+    - ***Network security groups*** are Azure resources that can contain multiple inbound and outbound security rules.
+    - A ***network virtual appliance*** carries out a particular network function, such as running a ***firewall*** or performing ***wide area network (WAN)*** optimization.
+7. ***Connect virtual networks***:
+    - Network traffic between ***peered networks*** is private, and travels on the Microsoft backbone network, ***never*** entering the public internet.
+    - ***User-defined routes (UDR)*** allow you to control the routing tables between subnets within a virtual network or between virtual networks.
+
+***Azure virtual networking*** supports both ***public and private*** endpoints to enable communication between external or internal resources with other internal resources:
+
+1. ***Public endpoints***: Have a public IP address and can be accessed from ***anywhere*** in the world.
+2. ***Private endpoints***: Exist within a ***virtual network*** and have a ***private IP*** address from within the address space of that virtual network.
+
+#### Describe Azure Virtual Private Networks
+
+***VPNs*** are typically deployed to connect two or more ***trusted*** private networks to one another ***over an untrusted network*** (typically the ***public internet***). ***VPNs*** can enable networks to safely and securely share ***sensitive information***.
+
+##### VPN Gateway
+
+A ***VPN gateway*** is a type of virtual network gateway.
+
+1. Connect ***on-premises datacenters to virtual networks*** through a ***site-to-site*** connection.
+2. Connect ***individual devices to virtual networks*** through a ***point-to-site*** connection.
+3. Connect ***virtual networks to other virtual networks*** through a ***network-to-network*** connection.
+
+> All data transfer is ***encrypted*** inside a private tunnel as it crosses the internet.
+
+When you deploy a VPN gateway, you specify the VPN type: either ***policy-based or route-based***.
+
+1. ***Policy-based VPN gateways***: Specify statically the ***IP address*** of packets that should be ***encrypted*** through each tunnel.
+2. ***Route-based gateways***: ***IPSec tunnels*** are modeled as a network interface or virtual tunnel interface.
+
+Use a ***route-based VPN gateway*** if you need any of the following types of connectivity:
+
+1. Connections ***between*** virtual networks
+2. ***Point-to-site*** connections
+3. ***Multisite*** connections
+4. ***Coexistence*** with an ***Azure ExpressRoute*** gateway
+
+##### High-availability scenarios
+
+There are a few ways to maximize the ***resiliency*** of your VPN gateway.
+
+1. ***Active/standby***: When planned maintenance or unplanned disruption ***affects*** the active instance, the ***standby*** instance ***automatically*** assumes ***responsibility*** for connections without any user intervention.
+2. ***Active/active***: In this configuration, you assign a ***unique public IP address*** to each instance. You then create ***separate tunnels*** from the on-premises device to each IP address.
+3. ***ExpressRoute Failover***: In high-availability scenarios, where there's risk associated with an outage of an ***ExpressRoute circuit***, you can also provision a ***VPN gateway*** that uses the ***internet*** as an ***alternative*** method of connectivity.
+4. ***Zone Redundant Gateways***: Deploying gateways in ***Azure availability zones*** physically and logically separates gateways within a region while protecting your on-premises network connectivity to Azure from zone-level failures.
+
+#### Describe Azure ExpressRoute
+
+***Azure ExpressRoute*** lets you extend your on-premises networks into the Microsoft cloud over a private connection, with the help of a connectivity provider.
+
+***Connectivity*** can be from an ***any-to-any (IP VPN) network***, a ***point-to-point Ethernet network***, or a ***virtual cross-connection*** through a connectivity provider at a colocation facility.
+
+***ExpressRoute*** connections ***don't*** go over the ***public Internet***. This allows ***ExpressRoute*** connections to offer more ***reliability, faster speeds, consistent latencies, and higher security*** than typical connections over the Internet.
+
+##### Features And Benefits Of ExpressRoute
+
+There are several benefits to using ***ExpressRoute*** as the connection service between Azure and on-premises networks.
+
+1. Connectivity to Microsoft ***cloud services*** across ***all regions*** in the geopolitical region.
+    - Microsoft ***Office 365***
+    - Microsoft ***Dynamics 365***
+    - ***Azure compute services***, such as Azure Virtual Machines
+    - ***Azure cloud services***, such as Azure Cosmos DB and Azure Storage
+2. ***Global connectivity*** to Microsoft services across all regions with the ***ExpressRoute Global Reach***.
+    - You can enable ***ExpressRoute Global Reach*** to exchange data across your on-premises sites by connecting your ***ExpressRoute circuits***.
+3. ***Dynamic routing*** between your network and Microsoft via ***Border Gateway Protocol (BGP)***.
+    - This protocol enables ***dynamic routing*** between your ***on-premises network*** and ***services*** running in the Microsoft cloud.
+4. Built-in ***redundancy*** in every peering location for ***higher reliability***.
+    - Each connectivity provider uses redundant devices to ensure that connections established with Microsoft are highly available.
+
+##### ExpressRoute Connectivity Models
+
+***ExpressRoute*** supports four models that you can use to connect your on-premises network to the Microsoft cloud:
+
+1. ***CloudExchange colocation***: Co-location refers to your datacenter, office, or other facility being physically co-located at a cloud exchange, such as an ISP.
+2. ***Point-to-point Ethernet connection***: Refers to using a ***point-to-point*** connection to connect your facility to the Microsoft cloud.
+3. ***Any-to-any connection***: You can integrate your ***wide area network (WAN)*** with Azure by providing connections to your offices and datacenters.
+4. ***Directly from ExpressRoute sites***: ***ExpressRoute Direct*** provides dual 100 Gbps or 10-Gbps connectivity, which supports ***Active/Active*** connectivity at scale.
+
+#### Describe Azure DNS
+
+***Azure DNS*** is a hosting service for ***DNS domains*** that provides ***name resolution*** by using Microsoft Azure infrastructure.
+
+##### Benefit Of Azure DNS
+
+***Azure DNS*** leverages the scope and scale of Microsoft Azure to provide numerous benefits, including:
+
+1. ***Reliability and performance***:
+    - Azure DNS uses anycast networking, so each DNS query is answered by the closest available DNS server to provide fast performance and high availability for your domain.
+2. ***Security***:
+    - ***Azure role-based access control (Azure RBAC)*** to control who has access to specific actions for your organization.
+    - ***Activity logs*** to monitor how a user in your organization modified a resource or to find an error when troubleshooting.
+    - ***Resource locking*** to lock a subscription, resource group, or resource. Locking prevents other users in your organization from accidentally deleting or modifying critical resources.
+3. ***Ease of Use***
+    - Because Azure DNS is running on Azure, it means you can manage your domains and records with the Azure portal, Azure PowerShell cmdlets, and the cross-platform Azure CLI.
+4. ***Customizable virtual networks***
+    - ***Azure DNS*** also supports private DNS domains. This feature allows you to use your ***own custom domain names*** in your private virtual networks, rather than being stuck with the Azure-provided names.
+5. ***Alias records***
+    - If the ***IP address*** of the underlying resource changes, the ***alias record set*** seamlessly ***updates itself*** during DNS resolution. The ***alias record set*** points to the service instance, and the service instance is associated with an ***IP address***.
 
 ### Module 3: Describe Azure Storage Services
 
