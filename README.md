@@ -713,4 +713,223 @@ With ***Azure File Sync***, you can:
 
 ### Module 4: Describe Azure Identity, Access And Security Services
 
-This module covers some of the authorization and authentication methods available with Azure.
+This module covers some of the ***authorization and authentication*** methods available with Azure.
+
+#### Describe Azure Directory Services
+
+With ***Azure AD***, you control the identity accounts, but Microsoft ensures that the service is available globally.
+
+##### Who Uses Azure AD?
+
+***Azure AD*** is for:
+
+1. ***IT administrators***: Administrators can use Azure AD to control access to applications and resources based on their business requirements.
+2. ***App developers***: Adding SSO functionality to an app or enabling an app to work with a user's existing credentials.
+3. ***Users***: Users can manage their identities and take maintenance actions like self-service password reset.
+4. ***Online service subscribers***: Microsoft 365, Microsoft Office 365, Azure, and Microsoft Dynamics CRM Online subscribers are already using Azure AD to authenticate into their account.
+
+##### What Does Azure AD Do?
+
+***Azure AD*** provides services such as:
+
+1. ***Authentication***: This includes verifying identity to access applications and resources.
+2. ***Single sign-on (SSO)***: Enables you to remember only one username and one password to access multiple applications.
+3. ***Application management***: You can manage your cloud and on-premises apps by using Azure AD.
+4. ***Device management***: Allows for device-based Conditional Access policies to restrict access attempts to only those coming from known devices, regardless of the requesting user account.
+
+##### Can I Connect My On-premises AD With Azure AD?
+
+***Azure AD Connect*** synchronizes user identities between on-premises Active Directory and ***Azure AD***.
+
+##### What is Azure Active Directory Domain Services?
+
+***Azure Active Directory Domain Services (Azure AD DS)*** is a service that provides ***managed domain services*** such as domain join, group policy, lightweight directory access protocol (LDAP), and Kerberos/NTLM authentication.
+
+In a ***hybrid*** environment with an on-premises AD DS environment, Azure AD Connect synchronizes identity information with Azure AD, which is then synchronized to the managed domain.
+
+![Alt text](azure-active-directory-sync-topology-7359f2b8.png)
+
+#### Describe Azure Authentication Methods
+
+***Authentication*** is the process of establishing the identity of a person, service, or device. It requires the person, service, or device to provide some type of ***credential*** to prove who they are.
+
+![Alt text](passwordless-convenience-security-30321b4d.png)
+
+##### What Is Single Sing-On (SSO)?
+
+1. ***Single sign-on (SSO)***:
+    - You need to remember ***only one*** ID and one password.
+    - Access across applications is granted to a ***single identity*** that's tied to the user.
+    - As users change roles or leave an organization, access is tied to a ***single identity***.
+    - Makes it ***easier*** for users to manage their identities and for IT to manage users.
+
+##### What’s Multifactor Authentication?
+
+***Multifactor authentication*** is the process of prompting a user for an ***extra form (or factor)*** of identification during the sign-in process. ***MFA*** helps protect against a ***password compromise*** in situations where the password was compromised but the second factor wasn't.
+
+1. ***Something the user knows*** – this might be a challenge question.
+2. ***Something the user has*** – this might be a code that's sent to the user's mobile phone.
+3. ***Something the user is*** – this is typically some sort of biometric property, such as a fingerprint or face scan.
+
+##### What’s Passwordless Authentication?
+
+***Passwordless authentication*** methods are more convenient because the ***password*** is ***removed*** and replaced with something you have, plus something you are, or something you know.
+
+Microsoft global Azure and Azure Government offer the following three passwordless authentication options that integrate with Azure Active Directory (Azure AD):
+
+1. ***Windows Hello for Business***: The ***biometric and PIN*** credentials are directly tied to the user's PC, which prevents access from anyone other than the owner.
+2. ***Microsoft Authenticator app***: Users can sign-in to any platform or browser by getting a notification to their phone, matching a number displayed on the screen to the one on their phone, and then using their biometric (touch or face) or PIN to confirm.
+3. ***FIDO2 security keys***: These FIDO2 security keys are typically USB devices, but could also use Bluetooth or NFC.
+
+#### Describe External Identities
+
+***Azure AD External Identities*** refers to all the ways you can securely interact with users outside of your organization.
+
+![Alt text](azure-active-directory-external-identities-5a892021.png)
+
+The following capabilities make up ***External Identities***:
+
+1. ***Business to business (B2B) collaboration*** - Collaborate with external users by letting them use their ***preferred identity*** to sign-in to your Microsoft applications or other enterprise applications (SaaS apps, custom-developed apps, etc.).
+2. ***B2B direct connect*** - Establish a mutual, two-way trust with ***another Azure AD organization*** for seamless collaboration.
+3. ***Azure AD business to customer (B2C)*** - Publish modern SaaS apps or custom-developed apps (excluding Microsoft apps) to consumers and customers, while using ***Azure AD B2C*** for identity and access management.
+
+#### Describe Azure Conditional Access
+
+Based on ***signals***, the decision might be to allow full access if the user is ***signing*** in from their usual location. If the user is ***signing*** in from an ***unusual location*** or a location that's marked as high risk, then access might be ***blocked*** entirely or possibly granted after the user ***provides*** a second form of ***authentication***.
+
+![Alt text](conditional-access-9bd268b8.png)
+
+##### When Can I Use Conditional Access?
+
+***Conditional Access*** is useful when you need to:
+
+1. Require ***multifactor authentication (MFA)*** to access an application depending on the requester’s role, location, or network.
+2. Require access to services only through ***approved client applications***.
+3. Require users to access your application only from ***managed devices***. A managed device is a device that meets your standards for security and compliance.
+4. ***Block*** access from ***untrusted*** sources, such as access from unknown or unexpected locations.
+
+#### Describe Azure Role-Based Access Control (RBAC)
+
+***The principle of least privilege*** says you should only grant access up to the level needed to complete a task. Azure enables you to control access through ***Azure role-based access control (Azure RBAC)***.  When you assign individuals or groups to one or more roles, they receive all the ***associated access permissions***.
+
+Similarly, if you add additional ***resources*** and point ***Azure RBAC*** at them, everyone in that ***Azure RBAC group*** will now have those ***permissions*** on the new resources as well as the existing resources.
+
+##### How is role-based access control applied to resources?
+
+***Role-based access control*** is applied to a scope, which is a resource or set of resources that this access applies to.
+
+Scopes include:
+
+1. A management group (a collection of multiple subscriptions).
+2. A single subscription.
+3. A resource group.
+4. A single resource.
+
+***Azure RBAC*** is hierarchical, in that when you grant access at a parent scope, those permissions are ***inherited*** by all child scopes.
+
+##### How Azure RBAC Is Enforced?
+
+***Azure RBAC*** is enforced on ***any action*** that's initiated against an ***Azure resource*** that passes through ***Azure Resource Manager***.
+
+***Resource Manager*** is a management service that provides a way to ***organize*** and ***secure*** your ***cloud resources***. When you're assigned a role, ***Azure RBAC*** allows you to perform ***actions*** within the scope of that role.
+
+#### Describe Zero Trust Model
+
+***Zero Trust*** is a security model that assumes the ***worst case scenario*** and protects resources with that expectation.
+
+Guiding principles:
+
+1. ***Verify explicitly*** - Always authenticate and authorize based on all available data points.
+2. ***Use least privilege access*** - Limit user access with ***Just-In-Time and Just-Enough-Access (JIT/JEA)***, risk-based adaptive policies, and data protection.
+3. ***Assume breach*** - Minimize blast radius and segment access. Verify end-to-end encryption. Use analytics to get visibility, drive threat detection, and improve defenses.
+
+##### Adjusting To Zero Trust
+
+Instead of assuming that a device is safe because it’s within the corporate network, it requires ***everyone to authenticate***.
+
+![Alt text](zero-trust-cf9202be.png)
+
+#### Describe Defense-in-Depth
+
+The objective of ***defense-in-depth*** is to protect information and ***prevent*** it from being ***stolen*** by those who aren't authorized to access it. A ***defense-in-depth strategy*** uses a series of mechanisms to ***slow*** the advance of an ***attack*** that aims at acquiring ***unauthorized access*** to data.
+
+##### Layers Of Defense-in-Depth
+
+You can visualize ***defense-in-depth*** as a set of layers, with the ***data*** to be secured at the ***center*** and all the ***other layers*** functioning to ***protect*** that central data layer.
+
+![Alt text](defense-depth-486afc12.png)
+
+Here's a brief overview of the role of each layer:
+
+1. ***Physical security layer***
+    - Securing access to ***buildings*** and controlling access to ***computing hardware***.
+    - ***Safeguards*** ensure that other layers can't be bypassed.
+2. ***Identity and access layer***
+    - ***Control access*** to infrastructure and change control.
+    - Use ***single sign-on (SSO)*** and ***multifactor authentication***.
+    - ***Audit*** events and changes.
+3. ***Perimeter layer***
+    - Use ***DDoS protection*** to filter large-scale attacks before they can affect the ***availability*** of a system for users.
+    - Use ***perimeter firewalls*** to identify and alert on malicious ***attacks*** against your network.
+4. ***Network layer***
+    - ***Limit communication*** between resources.
+    - ***Deny by default***.
+    - ***Restrict inbound*** internet access and ***limit outbound*** access where appropriate.
+    - Implement ***secure connectivity*** to on-premises networks.
+5. ***Compute layer***
+    - Secure access to ***virtual machines***.
+    - Implement ***endpoint protection*** on devices and keep systems ***patched*** and current.
+6. ***Application layer***
+    - Ensure that applications are ***secure and free of vulnerabilities***.
+    - Store ***sensitive application secrets*** in a secure storage medium.
+    - Make ***security a design requirement*** for all application development.
+7. ***Data layer***
+    - Database.
+    - Disk inside virtual machines.
+    - Software as a service (SaaS) applications, such as Office 365.
+    - Cloud storage.
+
+#### Describe Microsoft Defender For Cloud
+
+It ***monitors*** your cloud, on-premises, hybrid, and multicloud environments to provide ***guidance and notifications*** aimed at strengthening your security posture. When necessary, ***Defender for Cloud*** can automatically deploy a ***Log Analytics agent*** to gather security-related data.
+
+##### Azure-native Protections
+
+***Defender for Cloud*** helps you ***detect threats*** across:
+
+1. ***Azure PaaS services***: ***Detect threats*** targeting Azure services including Azure App Service, Azure SQL, Azure Storage Account, and more data services.
+2. ***Azure data services***: Defender for Cloud includes capabilities that help you ***automatically classify*** your data in Azure SQL.
+3. ***Networks***: Defender for Cloud helps you ***limit exposure*** to brute force attacks.
+
+##### Defend your hybrid resources
+
+In addition to defending your Azure environment, you can add ***Defender for Cloud*** capabilities to your ***hybrid cloud environment*** to protect your non-Azure servers.
+
+##### Defend resources running on other clouds
+
+***Defender for Cloud*** can also protect resources in ***other clouds*** (such as AWS and GCP).
+
+1. ***Defender for Cloud's CSPM*** features extend to your ***AWS resources***.
+2. ***Microsoft Defender for Containers*** extends its container threat detection and advanced defenses to your ***Amazon EKS Linux clusters***.
+3. ***Microsoft Defender for Servers*** brings threat detection and advanced defenses to your Windows and Linux ***EC2 instances***.
+
+##### Assess, Secure, and Defend
+
+***Defender for Cloud*** fills ***three vital needs*** as you manage the security of your resources and workloads in the cloud and on-premises:
+
+1. ***Continuously assess*** – Know your security posture. Identify and track vulnerabilities.
+    - ***Vulnerability assessment solutions*** for your virtual machines, container registries, and SQL servers.
+    - Access to the ***vulnerability findings*** from Microsoft threat and vulnerability management.
+2. ***Secure*** – Harden resources and services with ***Azure Security Benchmark***.
+    - If new resources ***aren't secured, they're flagged*** and you get a prioritized list of recommendations for what you need to fix
+    - ***Groups*** the recommendations into ***security controls*** and adds a secure score value to each control.
+3. ***Defend*** – Detect and resolve threats to resources, workloads, and services.
+    - ***Security Alerts***
+        1. Describe details of the ***affected resources***.
+        2. Suggest ***remediation steps***.
+        3. Provide, in some cases, an option to trigger a ***logic app*** in response.
+    - ***Advanced Threat Protection***
+        1. Securing the management ports of your VMs with ***just-in-time*** access.
+        2. Adaptive application controls to create ***allowlists***.
+
+![Alt text](assess-secure-defend-46228306.png)
