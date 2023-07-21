@@ -5,6 +5,7 @@
         "datacenters",
         "deallocates",
         "Gbps",
+        "GZRS",
         "Multisite",
         "routable"
     ]
