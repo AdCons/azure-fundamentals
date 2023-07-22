@@ -101,6 +101,8 @@ When building or deploying a cloud application, two of the biggest consideration
 
 - ***Horizontal scaling*** means increasing or decreasing the ***number of virtual machines***.
 
+***Elasticity*** refers to the ability to scale resources as needed, to ensure that an application can keep up with demand, and then reducing the available resources during off-peak hours.
+
 #### Describe The Benefits Of Reliability And Predictable In The Cloud
 
 ***Reliability and predictability*** are two crucial cloud benefits that help you develop solutions with confidence.
@@ -933,3 +935,248 @@ In addition to defending your Azure environment, you can add ***Defender for Clo
         2. Adaptive application controls to create ***allowlists***.
 
 ![Alt text](assess-secure-defend-46228306.png)
+
+## Learning Path 3: Describe Azure Management And Governance
+
+This learning path explores the ***management and governance*** resources available to help you manage your cloud and on-premises resources.
+
+### Module 1: Describe Cost Management In Azure
+
+That OpEx cost can be impacted by many factors.
+
+#### Describe Factors That Can Affect Costs In Azure
+
+1. ***Resource type***: The type of resources, the settings for the resource, and the Azure region will all have an impact on how much a resource costs.
+2. ***Consumption***:  If you use more compute this cycle, you pay more. If you use less in the current cycle, you pay less.
+3. ***Maintenance***: The flexibility of the cloud makes it possible to rapidly adjust resources based on demand.
+4. ***Geography***: The cost of power, labor, taxes, and fees vary depending on the location. Network traffic is also impacted based on geography.
+5. ***Subscription type***: Some Azure subscription types also include usage allowances, which affect costs.
+6. ***Azure Marketplace***: Azure Marketplace lets you purchase Azure-based solutions and services from third-party vendors.
+
+#### Compare The Pricing And Total Cost Of Ownership Calculators
+
+Both calculators are accessible from the internet, and both calculators allow you to build out a configuration.
+
+1. ***Pricing Calculator***
+    - Focus is on the cost of ***provisioned resources*** in Azure.
+    - For information purposes only. The prices are only an ***estimate***.
+2. ***Total Cost of Ownership (TCO) Calculator***
+    - The TCO calculator is designed to help you ***compare*** the costs for running an on-premises infrastructure ***compared to*** an Azure Cloud infrastructure.
+
+#### Describe The Azure Cost Management Tool
+
+***Cost Management*** provides the ability to quickly check Azure resource costs, create alerts based on resource spend, and create budgets that can be used to automate management of resources.
+
+You use ***cost analysis*** to explore and analyze your organizational costs. You can view aggregated costs by organization to understand where costs are accrued and to identify spending trends.
+
+##### Cost Alerts
+
+The three types of alerts that may show up are:
+
+1. ***Budget alerts***: Notify you when ***spending***, based on usage or cost, reaches or exceeds the amount defined in the alert condition of the budget.
+2. ***Credit alerts***: Notify you when your Azure ***credit*** monetary commitments are consumed.
+3. ***Department spending quota alerts***: Notify you when department spending ***reaches*** a fixed ***threshold*** of the quota.
+
+##### Budgets
+
+A ***budget*** is where you set a ***spending limit*** for Azure. When the budget hits the budget alert level, it will trigger a ***budget alert*** that shows up in the cost alerts area.
+
+#### Describe The Purpose Of Tags
+
+***Resource tags*** are another way to ***organize*** resources. Tags provide extra information, or metadata, about your resources. This metadata is useful for:
+
+1. ***Resource management***: Tags enable you to locate and act on resources that are associated with ***specific workloads***, environments, business units, and owners.
+2. ***Cost management and optimization***: Tags enable you to group resources so that you can report on ***costs***, allocate internal cost centers, track budgets, and forecast estimated cost.
+3. ***Operations management***: Tags enable you to group resources according to how critical their ***availability*** is to your business.
+4. ***Security Tags***: enable you to classify data by its security level, such as ***public*** or ***confidential***.
+5. ***Governance and regulatory compliance***: Tags enable you to identify resources that align with governance or regulatory compliance requirements, such as ***ISO 27001***.
+6. ***Workload optimization and automation***: Tags can help you visualize all of the resources that participate in ***complex deployments***.
+
+You can use ***Azure Policy*** to enforce tagging rules and conventions. Resources ***don't inherit*** tags from subscriptions and resource groups, meaning that you can apply tags at ***one level*** and not have those tags automatically show up at a ***different level***.
+
+### Module 2: Describe Features And Tools In Azure For Governance And Compliance
+
+In this module, you’ll be introduced to some of the features and tools you can use to help with governance of your Azure environment. You’ll also learn about tools you can use to help keep resources in compliance with corporate or regulatory requirements.
+
+#### Describe The Purpose Of Azure Blueprints
+
+***Azure Blueprints*** lets you standardize cloud subscription or environment deployments.
+
+##### What Are Artifacts?
+
+Each component in the ***blueprint*** definition is known as an ***artifact***. It is possible for ***artifacts*** to have ***no additional*** parameters (configurations). Artifacts can also contain ***one or more*** parameters that you can configure.
+
+***Azure Blueprints*** deploy a new environment based on all of the requirements, settings, and configurations of the ***associated artifacts***. Artifacts can include things such as:
+
+1. ***Role assignments***
+2. ***Policy assignments***
+3. ***Azure Resource Manager templates***
+4. ***Resource groups***
+
+#### Describe The Purpose Of Azure Policy
+
+***Azure Policy*** is a service in Azure that enables you to create, assign, and manage ***policies*** that control or audit your ***resources***.
+
+##### How Does Azure Policy Define Policies?
+
+- Enables you to ***define*** both individual policies and groups of related policies, known as ***initiatives***.
+- Can be set at ***each level***, enabling you to set policies on a specific resource, resource group, subscription, and so on.
+- Comes with ***built-in*** policy and initiative definitions for Storage, Networking, Compute, Security Center, and Monitoring.
+- In some cases, Azure Policy can ***automatically*** remediate noncompliant resources and configurations to ensure the integrity of the state of the resources.  
+- If you have a ***specific resource*** that you don’t want Azure Policy to automatically fix, you can ***flag*** that resource as an exception.
+- ***Azure Policy*** also integrates with ***Azure DevOps*** by applying any continuous integration and delivery ***pipeline policies*** that pertain to the pre-deployment and post-deployment phases of your applications.
+
+##### What Are Azure Policy Initiatives?
+
+An ***Azure Policy initiative*** is a way of ***grouping*** related policies together. The ***initiative*** definition contains all of the ***policy*** definitions to help track your ***compliance state*** for a larger goal.
+
+1. ***Monitor unencrypted SQL Database in Security Center***: This policy monitors for unencrypted SQL databases and servers.
+2. ***Monitor OS vulnerabilities in Security Center***: This policy monitors servers that don't satisfy the configured OS vulnerability baseline.
+3. ***Monitor missing Endpoint Protection in Security Center***: This policy monitors for servers that don't have an installed endpoint protection agent.
+
+#### Describe The Purpose Of Resource Locks
+
+Even with ***Azure role-based access control (Azure RBAC)*** policies in place, there's still a risk that people with the ***right level*** of access could ***delete*** critical cloud resources. ***Resource locks*** prevent resources from being ***deleted or updated***, depending on the type of ***lock***.
+
+##### Types Of Resource Locks
+
+- ***Delete*** means authorized users can still ***read and modify*** a resource, but they can't delete the resource.
+- ***ReadOnly*** means authorized users can read a resource, but they ***can't delete or update*** the resource.
+
+##### How Do I Manage Resource Locks?
+
+To view, add, or delete ***locks*** in the ***Azure portal***, go to the ***Settings*** section of any resource's Settings pane in the ***Azure portal***.
+
+##### How Do I Delete Or Change A Locked Resource?
+
+To modify a ***locked*** resource, you must first ***remove the lock***. After you remove the lock, you can apply any ***action*** you have permissions to perform
+
+#### Describe The Purpose Of The Service Trust Portal
+
+The ***Microsoft Service Trust Portal*** is a portal that provides access to various content, tools, and other resources about ***Microsoft security, privacy, and compliance practices***.
+
+### Module 3: Describe Features And Tools For Managing And Deploying Azure Resources
+
+This module covers tools that help you ***manage*** your Azure and on-premises resources.
+
+#### Describe Tool For Interacting With Azure
+
+Azure provides multiple tools for ***managing*** your environment, including the:
+
+1. ***Azure portal***
+    - Build, manage, and monitor ***everything***.
+    - Create custom ***dashboards*** for an organized view of resources.
+    - Configure ***accessibility*** options for an optimal experience.
+2. ***Azure PowerShell***
+    - The ***routine setup, teardown, and maintenance*** of a single resource or multiple connected resources.
+    - The deployment of an ***entire infrastructure***.
+3. ***Azure Command Line Interface (CLI)***
+    - Uses ***Bash commands***.
+    - It mainly comes down to which ***language*** you’re ***most familiar*** with.
+
+#### Describe The Purpose Of Azure Arc
+
+In utilizing ***Azure Resource Manager (ARM)***, ***Arc*** lets you extend your Azure compliance and monitoring to your hybrid and multi-cloud configurations.
+
+***Azure Arc*** provides a centralized, unified way to:
+
+1. Manage your ***entire environment*** together by projecting your existing ***non-Azure*** resources into ***ARM***.
+2. Manage ***multi-cloud and hybrid*** virtual machines, Kubernetes clusters, and databases as if they are running in Azure.
+3. Use ***familiar Azure services*** and management capabilities, regardless of where they live.
+4. Continue using ***traditional ITOps*** while introducing DevOps practices to support new cloud and native patterns in your environment.
+5. Configure ***custom locations*** as an abstraction layer on top of Azure ***Arc-enabled*** Kubernetes clusters and cluster extensions.
+
+##### What Can Azure Arc Do Outside Of Azure?
+
+Currently, ***Azure Arc*** allows you to manage the following resource types hosted outside of Azure:
+
+1. ***Servers***
+2. ***Kubernetes clusters***
+3. ***Azure data services***
+4. ***SQL Server***
+5. ***Virtual machines (preview)***
+
+#### Describe Azure Resource Manager And Azure ARM Templates
+
+It provides a management layer that enables you to ***create, update, and delete*** resources in your Azure account. Anytime you do anything with your Azure resources, ***ARM*** is involved.
+
+##### Azure Resource Manager Benefits
+
+With Azure Resource Manager, you can:
+
+1. ***Manage*** your infrastructure through ***declarative templates*** rather than scripts. A ***Resource Manager template*** is a ***JSON*** file that defines what you want to deploy to Azure.
+2. ***Deploy, manage, and monitor*** all the resources for your solution as a group, rather than handling these resources individually.
+3. ***Re-deploy*** your solution throughout the ***development life-cycle*** and have confidence your resources are deployed in a ***consistent state***.
+4. ***Define*** the dependencies between resources, so they're deployed in the correct order.
+5. ***Apply*** access control to all services because ***RBAC*** is natively integrated into the ***management platform***.
+6. ***Apply*** tags to resources to ***logically organize*** all the resources in your subscription.
+7. ***Clarify*** your organization's ***billing*** by viewing ***costs*** for a group of resources that share the same tag.
+
+##### ARM Templates
+
+By using ***ARM templates***, you can describe the resources you want to use in a declarative ***JSON*** format. With an ***ARM template***, the deployment code is verified before any code is run.
+
+##### Benefits Of Using ARM Templates
+
+***ARM*** templates provide many benefits when planning for deploying Azure resources. Some of those benefits include:
+
+1. ***Declarative syntax***: ***ARM templates*** allow you to create and deploy an ***entire Azure infrastructure*** declaratively. ***Declarative syntax*** means you declare what you want to deploy but don’t need to write the actual programming commands and sequence to deploy the resources.
+2. ***Repeatable results***: Repeatedly deploy your infrastructure throughout the ***development lifecycle*** and have confidence your resources are deployed in a ***consistent*** manner.
+3. ***Orchestration***: You don't have to worry about the complexities of ordering operations. ***Azure Resource Manager*** orchestrates the deployment of interdependent resources, so they're created in the ***correct order***. When possible, ***Azure Resource Manager*** deploys resources in ***parallel***, so your deployments finish ***faster*** than serial deployments.
+4. ***Modular files***: You can break your templates into ***smaller, reusable components*** and link them together at deployment time. You can also ***nest*** one template inside another template.
+5. ***Extensibility***: With deployment scripts, you can add PowerShell or Bash scripts to your templates. A ***script*** can be included in the template or stored in an external source and referenced in the template. ***Deployment scripts*** give you the ability to complete your ***end-to-end*** environment setup in a single ***ARM template***.
+
+### Module 4: Describe Monitoring Tools In Azure
+
+This module covers tools that you can use to monitor your Azure environment.
+
+#### Describe The Purpose Of Azure Advisor
+
+***Azure Advisor*** evaluates your Azure resources and makes recommendations to help improve reliability, security, and performance, achieve operational excellence, and reduce costs.
+
+The recommendations are divided into five categories:
+
+1. ***Reliability*** is used to ensure and improve the continuity of your ***business-critical*** applications.
+2. ***Security*** is used to detect threats and vulnerabilities that might lead to ***security breaches***.
+3. ***Performance*** is used to improve the ***speed*** of your applications.
+4. ***Operational Excellence*** is used to help you achieve ***process and workflow*** efficiency, resource manageability, and deployment best practices.
+5. ***Cost*** is used to ***optimize and reduce*** your overall Azure spending.
+
+#### Describe Azure Service Health
+
+***Azure Service Health*** helps you keep track of Azure resource, both your ***specifically*** deployed resources and the ***overall*** status of Azure. Azure service health does this by combining three different Azure services:
+
+1. ***Azure Status*** is a broad picture of the status of Azure globally.
+2. ***Service Health*** focuses on the Azure services and regions you're using. This is the best place to look for service impacting communications about ***outages, planned maintenance activities***, and other health advisories because the authenticated ***Service Health*** experience knows which services and resources you currently use.
+3. ***Resource Health*** provides information about the ***health*** of ***your*** individual cloud resources.
+
+Something you initially thought was a simple anomaly that turned into a trend, can readily be ***reviewed and investigated*** thanks to the ***historical alerts***.
+
+#### Describe Azure Monitor
+
+***Azure Monitor*** is a platform for collecting data on your resources, analyzing that data, visualizing the information, and even acting on the results.
+
+![Alt text](azure-monitor-overview-614cd2fd.svg)
+
+##### Azure Log Analytics
+
+***Azure Log Analytics*** is the tool in the Azure portal where you’ll write and run ***log queries*** on the data gathered by ***Azure Monitor***. You can write an ***advanced query*** to perform ***statistical analysis and visualize*** the results in a chart to identify a particular trend.
+
+##### Azure Monitor Alerts
+
+***Azure Monitor Alerts*** are an automated way to stay informed when Azure Monitor detects a ***threshold*** being crossed.
+
+![Alt text](azure-monitor-alerts-2478e941.png)
+
+***Alert rules based on metrics*** provide near real time alerts based on numeric values. Rules based on logs allow for complex logic across data from multiple sources.
+
+##### Application Insights
+
+***Application Insights*** is capable of monitoring applications that are running in Azure, on-premises, or in a different cloud environment.
+
+1. ***Request rates, response times, and failure rates***.
+2. ***Dependency*** rates, response times, and failure rates, to show whether ***external services*** are slowing down performance.
+3. ***Page views and load performance*** reported by users' browsers
+4. ***AJAX calls from web pages***, including rates, response times, and failure rates.
+5. ***User and session counts***.
+6. ***Performance counters*** from Windows or Linux server machines, such as CPU, memory, and network usage.
