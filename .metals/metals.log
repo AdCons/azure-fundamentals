@@ -30,3 +30,8 @@ INFORMACIÓN: Successfully applied 4 migrations to schema "PUBLIC", now at versio
 2023.08.05 13:02:29 WARN  no build tool detected in workspace 'X:\my-learning-notes'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
 ago 06, 2023 1:19:47 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFORMACIÓN: Unsupported notification method: $/setTrace
+ago 07, 2023 3:55:55 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFORMACIÓN: Unsupported notification method: $/setTrace
+2023.08.07 05:24:35 INFO  Shutting down server
+2023.08.07 05:24:35 INFO  shutting down Metals
+2023.08.07 05:24:35 INFO  Exiting server
