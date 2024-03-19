@@ -2,7 +2,8 @@
 
 
 def selection_sort(array, length):
-    for index in range(0, length - 1):
+    ''' Selection Sort '''
+    for index in range(length - 1):
         key = array[index]
         swap = index + 1
         while swap < length:
@@ -14,6 +15,6 @@ def selection_sort(array, length):
 
 
 A = [12, 11, 10, 9, 8, 2, 7, 6, 5, 4, 3, 2, 1]
-n = len(A)
-selection_sort(A, n)
+N = len(A)
+selection_sort(A, N)
 print(A)

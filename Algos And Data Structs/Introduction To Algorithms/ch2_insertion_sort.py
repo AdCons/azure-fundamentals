@@ -2,6 +2,7 @@
 
 
 def insertion_sort(array, length):
+    ''' Insertion Sort '''
     for index in range(1, length):
         key = array[index]
         insert = index - 1
@@ -12,6 +13,7 @@ def insertion_sort(array, length):
 
 
 def reverse_insertion_sort(array, array_len):
+    ''' Reverse Insertion Sort '''
     for index in range(1, array_len):
         key = array[index]
         insert = index - 1

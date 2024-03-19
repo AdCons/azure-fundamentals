@@ -2,6 +2,7 @@
 
 
 def merge(array, start, middle, end):
+    ''' Merge Sort'''
     left_len = middle - start + 1
     right_len = end - middle
     left = [0] * (left_len)
@@ -16,22 +17,23 @@ def merge(array, start, middle, end):
     while l_remain < left_len and r_remain < right_len:
         if left[l_remain] <= right[r_remain]:
             array[fill] = left[l_remain]
-            l_remain = l_remain + 1
+            l_remain += 1
         else:
             array[fill] = right[r_remain]
-            r_remain = r_remain + 1
+            r_remain += 1
         fill = fill + 1
     while l_remain < left_len:
         array[fill] = left[l_remain]
-        l_remain = l_remain + 1
+        l_remain += 1
         fill = fill + 1
     while r_remain < right_len:
         array[fill] = right[r_remain]
-        r_remain = r_remain + 1
+        r_remain += 1
         fill = fill + 1
 
 
 def merge_sort(array, start, end):
+    ''' Merge Sort '''
     if start >= end:
         return
     middle = (start + end)//2

@@ -2,8 +2,9 @@
 
 
 def linear_search(value, array, length):
+    ''' Linear Search '''
     found_index = None
-    for index in range(0, length):
+    for index in range(length):
         if array[index] == value:
             found_index = index
     return found_index
