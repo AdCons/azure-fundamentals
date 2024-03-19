@@ -1,5 +1,0 @@
-char_column|varchar_column|text_column
-abc       |abc|abc
-def       |def|def
-abc       |abc|abc
-defghi    |defghi|defghi
