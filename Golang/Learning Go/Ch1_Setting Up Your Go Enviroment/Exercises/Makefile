@@ -11,7 +11,7 @@ build: vet
 	go build
 
 run: build
-	./HelloWorld
+	./Chapter1
 
 clean: run
 	go clean
