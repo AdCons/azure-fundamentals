@@ -24,6 +24,7 @@
         "Flink",
         "Gbps",
         "GZRS",
+        "Hola",
         "Inmon",
         "Intune",
         "isinstance",
@@ -52,7 +53,9 @@
         "traceback",
         "transformative",
         "triaging",
-        "unmanaged"
+        "unmanaged",
+        "Привіт",
+        "नमस्कार"
     ],
     "files.watcherExclude": {
         "**/target": true
